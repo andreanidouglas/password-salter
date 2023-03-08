@@ -3,7 +3,7 @@
 To create a password hash:
 ```shell
 $ cargo build --release
-$ ./target/release/passhasher --password <YOUR-PASSWORD>
+$ ./target/release/passhasher --password '<YOUR-PASSWORD>'
 ```
 
 To verify a password hash:
