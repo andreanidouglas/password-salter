@@ -1,15 +1,20 @@
 # Simple password hash and salt.
 
+# Usage
+
 To create a password hash:
 ```shell
-$ cargo build --release
-$ ./target/release/passhasher --password '<YOUR-PASSWORD>'
+$ ./passhasher --password '<YOUR-PASSWORD>'
 ```
 
 To verify a password hash:
 ```shell
-$ cargo build --release
-$ ./target/release/passhasher --password '<YOUR-PASSWORD>' verify --hash_password '<PASSWORD-HASH>'
+$ ./passhasher --password '<YOUR-PASSWORD>' verify --hash_password '<PASSWORD-HASH>'
+```
+
+# Build
+```shell
+$ cargo build [--release]
 ```
 
 dependencies:
