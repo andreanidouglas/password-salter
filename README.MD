@@ -1,6 +1,6 @@
 # Simple password hash and salt.
 
-# Usage
+## Usage
 
 To create a password hash:
 ```shell
@@ -12,7 +12,7 @@ To verify a password hash:
 $ ./passhasher --password '<YOUR-PASSWORD>' verify --hash_password '<PASSWORD-HASH>'
 ```
 
-# Build
+## Build
 ```shell
 $ cargo build [--release]
 ```
