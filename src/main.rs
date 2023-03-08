@@ -70,3 +70,22 @@ fn main() -> anyhow::Result<()> {
 
 
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn is_able_to_create_hash() {
+        let test_password = "12345".as_bytes();
+        let hashed_password = create_hash(test_password).unwrap();
+
+        assert_eq!(verify(hashed_password, test_password).unwrap(), true);
+    }
+
+    #[test]
+    fn can_verify_a_existing_hash() {
+        let hash = "$argon2id$v=19$m=19456,t=2,p=1$3Ysgw68X4BsorZTBKsHVrg$2RIXjIWMe60537YHikP8VFJKK9USU2+B1HEHtKVOf2Y".to_string();
+        assert!(verify(hash, "78900".as_bytes()).unwrap());
+    }
+}
