@@ -2,7 +2,7 @@
 # Based on https://github.com/actions-rs/example/blob/master/.github/workflows/quickstart.yml
 # Simple action to check and test rust application
 
-on: [push, pull_request]
+on: [push, pull_request, workflow_dispatch]
 
 name: test rust application
 jobs:
@@ -33,7 +33,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Install stable toolchain
-        uses: actions-rs/toolchain-v1
+        uses: actions-rs/toolchain@v1
         with: 
           profile: minimal
           toolchain: stable
