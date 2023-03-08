@@ -1,4 +1,4 @@
-#Simple password hash and salt.
+# Simple password hash and salt.
 
 To create a password hash:
 ```shell
