@@ -9,7 +9,7 @@ $ ./target/release/passhasher --password <YOUR-PASSWORD>
 To verify a password hash:
 ```shell
 $ cargo build --release
-$ ./target/release/passhasher --password <YOUR-PASSWORD> verify --hash_password <PASSWORD-HASH>
+$ ./target/release/passhasher --password '<YOUR-PASSWORD>' verify --hash_password '<PASSWORD-HASH>'
 ```
 
 dependencies:
