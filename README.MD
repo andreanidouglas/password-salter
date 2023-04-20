@@ -13,10 +13,8 @@ $ ./passhasher --password '<YOUR-PASSWORD>' verify --hash_password '<PASSWORD-HA
 ```
 
 ## Build
-[]https://ci.delta.labs.andreanidr.com/buildStatus/icon?job=Password-Salter/main
 
 [![Build Status](https://ci.delta.labs.andreanidr.com/buildStatus/icon?job=Password-Salter/main)](https://ci.delta.labs.andreanidr.com/job/Password-Salter/)
-
 
 ```shell
 $ cargo build [--release]
