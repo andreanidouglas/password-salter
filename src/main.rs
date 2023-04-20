@@ -7,7 +7,7 @@ use clap::{Parser, Subcommand};
 #[derive(Subcommand, Debug)]
 enum VerifyArgs {
     Verify {
-        #[arg(short='r', long)]
+        #[arg(short = 'r', long)]
         hash_password: String,
     },
 }
@@ -29,7 +29,7 @@ fn create_hash(password: &[u8]) -> anyhow::Result<String> {
         Ok(v) => v.to_string(),
         Err(e) => anyhow::bail!("Could not create hash: {e}"),
     };
-    Ok(password_hash.to_string())
+    Ok(password_hash)
 }
 
 fn verify(password_hash: String, password: &[u8]) -> anyhow::Result<bool> {
@@ -53,22 +53,20 @@ fn main() -> anyhow::Result<()> {
 
     match &cli.verify {
         Some(VerifyArgs::Verify { hash_password }) => {
-            if verify(String::from(hash_password), cli.password.as_bytes())?{
+            if verify(String::from(hash_password), cli.password.as_bytes())? {
                 println!("OK: Password and hash do match.");
             } else {
                 println!("WARN: Password and hash do not match.")
             }
-            
+
             Ok(())
-        },
+        }
         None => {
             let hash = create_hash(cli.password.as_bytes())?;
             println!("OK: {hash}");
             Ok(())
         }
     }
-
-
 }
 
 #[cfg(test)]
